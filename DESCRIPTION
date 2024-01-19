@@ -15,4 +15,12 @@ Imports:
   dplyr,
   purrr,
   stringr,
-  tidyr
+  tidyr,
+  rlang,
+  ggplot2,
+  glue,
+  magrittr,
+  rstudioapi,
+  scales,
+  tibble,
+  vctrs

@@ -1,1 +1,1 @@
-utils::globalVariables(c('fun','masker','maskee','%>%'))
+utils::globalVariables(c('fun','masker','maskee','%>%',".","x","what","n"))
