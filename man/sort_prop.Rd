@@ -2,7 +2,7 @@
 % Please edit documentation in R/sort_prop.R
 \name{sort_prop}
 \alias{sort_prop}
-\title{Count any number of columns, print percentage and sort descending.}
+\title{Count unique values for any number of columns, print proportion and sort descending.}
 \usage{
 sort_prop(tbl, ...)
 }

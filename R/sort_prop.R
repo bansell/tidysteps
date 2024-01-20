@@ -1,5 +1,5 @@
 
-#' Count any number of columns, print percentage and sort descending.
+#' Count unique values for any number of columns, print proportion and sort descending.
 #'
 #' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 #' @param tbl A data frame/tibble
