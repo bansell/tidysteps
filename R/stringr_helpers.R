@@ -9,6 +9,8 @@
 #' @describeIn all_after Extract all characters after match.
 #' @export
 all_after <-  function(character){glue::glue('[^{character}]*$')}
+
+
 #' @describeIn all_after Extract all characters before match.
 #'
 #' @export

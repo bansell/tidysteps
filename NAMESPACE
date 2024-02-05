@@ -2,6 +2,12 @@
 
 export(all_after)
 export(all_before)
+export(as_character)
+export(as_complex)
+export(as_factor)
+export(as_integer)
+export(as_logical)
+export(as_numeric)
 export(bighead)
 export(bottom_legend)
 export(fix_tidyverse_conflicts)
