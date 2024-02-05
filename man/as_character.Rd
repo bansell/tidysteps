@@ -45,7 +45,7 @@ Data type conversion wrappers
 
 \item \code{as_integer()}: Convert vector to integer data type
 
-\item \code{as_factor()}: Convert vector to factor data type
+\item \code{as_factor()}: Convert vector to factor data type. Wraps forcats::as_factor()
 
 \item \code{as_logical()}: Convert vector to logical data type
 

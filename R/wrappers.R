@@ -46,11 +46,11 @@ as_integer <- function(x) {
 }
 
 #' @title as_factor
-#' @describeIn as_character Convert vector to factor data type
+#' @describeIn as_character Convert vector to factor data type. Wraps forcats::as_factor()
 #'
 #' @export
 as_factor <- function(x) {
-  as.factor(x)
+  forcats::as_factor(x)
 }
 
 #' @title as_logical

@@ -23,4 +23,6 @@ Imports:
   rstudioapi,
   scales,
   tibble,
-  vctrs
+  vctrs,
+  forcats
+  
