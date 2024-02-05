@@ -7,7 +7,7 @@
 \alias{as_factor}
 \alias{as_logical}
 \alias{as_complex}
-\title{as_character}
+\title{Data type conversion wrappers}
 \usage{
 as_character(x)
 
@@ -32,10 +32,7 @@ Simple wrapper for as.character() for consistency with tidy syntax.
 
 Note: These are very basic functions mostly for teaching purposes. Not all data types are inter-convertible. For more info see \href{https://vctrs.r-lib.org/reference/theory-faq-coercion.html}{theory of type coercion}.
 
-For a complete treatment of type conversion/coercion \href{https://vctrs.r-lib.org/reference/vec_cast.html}{vctrs::vec_cast()}.
-}
-\details{
-Data type conversion wrappers
+For a complete treatment of type conversion/coercion, see \href{https://vctrs.r-lib.org/reference/vec_cast.html}{vctrs::vec_cast()}.
 }
 \section{Functions}{
 \itemize{
