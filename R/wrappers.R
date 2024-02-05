@@ -1,8 +1,11 @@
 #' Data type conversion wrappers
 #'
+#' @description
 #' Simple wrapper for as.character() for consistency with tidy syntax.
-#' Note: these are technically all_after_last() and all_before_first() occurrences.
-#' see \href{https://vctrs.r-lib.org/reference/vec_cast.html}{\strong{vctrs::vec_cast()}} for a complete treatment of type conversion/coersion.
+#'
+#' Note: These are very basic functions mostly for teaching purposes. Not all data types are inter-convertible. For more info see \href{https://vctrs.r-lib.org/reference/theory-faq-coercion.html}{theory of type coercion}.
+#'
+#' For a complete treatment of type conversion/coercion \href{https://vctrs.r-lib.org/reference/vec_cast.html}{vctrs::vec_cast()}.
 #'
 #' @return A vector of the specified data type.
 #' @param x  A vector.
