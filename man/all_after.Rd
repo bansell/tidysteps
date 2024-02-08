@@ -18,7 +18,6 @@ A vector.
 \description{
 Identifies sub-string occuring before or after character.
 Note: these are technically all_after_last() and all_before_first() occurrences.
-see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \section{Functions}{
 \itemize{
@@ -27,3 +26,16 @@ see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vi
 \item \code{all_before()}: Extract all characters before match.
 
 }}
+\examples{
+stringr::str_extract('string_test', all_after("_"))
+stringr::str_remove('string_test',  all_after("_"))
+
+stringr::str_extract('string/test', all_after("/"))
+stringr::str_extract('string/test', all_before("/"))
+stringr::str_extract('string_test', all_before("_"))
+stringr::str_remove('string_test',  all_before("_"))
+stringr::str_extract('string_test_two', all_after("_"))
+stringr::str_remove('string_test_two',  all_after("_"))
+stringr::str_extract('string_test_two', all_before("_"))
+stringr::str_remove('string_test_two',  all_before("_"))
+}
