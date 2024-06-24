@@ -18,7 +18,6 @@ Imports:
   tidyr,
   rlang,
   ggplot2,
-  glue,
   magrittr,
   rstudioapi,
   scales,

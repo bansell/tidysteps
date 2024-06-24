@@ -8,7 +8,13 @@
 #' @param character A character string.
 #' @describeIn all_after Extract all characters after match.
 #' @export
-all_after <-  function(character){glue::glue('[^{character}]*$')}
+all_after <- function(input, character, occurrence = 1) {
+  # Build the regex pattern using glue
+  pattern <- glue::glue("^(?:[^{character}]*{character}){{{occurrence}}}(.*)$")
+  # Apply extraction
+  result <- stringr::str_match(input, pattern)
+  return(result[, 2])
+}
 
 #' @examples
 
@@ -32,9 +38,8 @@ all_after <-  function(character){glue::glue('[^{character}]*$')}
 #' @describeIn all_after Extract all characters before match.
 #'
 #' @export
-all_before <- function(character){glue::glue('[^{character}]+')}
+all_before <- function(character,occurance=1){glue::glue('[^{character}]+')}
 #'
-
 
 
 

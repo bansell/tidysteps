@@ -5,9 +5,9 @@
 \alias{all_before}
 \title{stringr regex helpers}
 \usage{
-all_after(character)
+all_after(input, character, occurrence = 1)
 
-all_before(character)
+all_before(character, occurance = 1)
 }
 \arguments{
 \item{character}{A character string.}
