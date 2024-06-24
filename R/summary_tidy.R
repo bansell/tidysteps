@@ -26,7 +26,7 @@ summary_tidy <- function(tbl, data_type = "cont"){
                           .name_repair  = ~ vctrs::vec_as_names(..., quiet = TRUE)) |>
     magrittr::set_colnames(paste0('x',1:3)) |>
     dplyr::select(- .data$x1) |> tidyr::separate(.data$x3, into=c('stat','value'), sep=':') |>
-    dplyr::mutate(dplyr::across(.cols=everything(), .fns = ~trimws(.))) |>
+    dplyr::mutate(dplyr::across(.cols = dplyr::everything(), .fns = ~trimws(.))) |>
     tidyr::drop_na() |> tidyr::spread(.data$x2, .data$value)
 
   cont <- t1 |> dplyr::filter(! .data$stat %in% c('Class','Length')) |>

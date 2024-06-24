@@ -8,7 +8,7 @@
 #' @return A data_frame (aka tibble) to the console. EG.GO and entrez_joinTable are exported to R_GlobalEnv.
 #' @examples
 #' mtc_mat <- as.matrix(mtcars)
-#' mtc_mat |> bighead(8)
+#' mtc_mat |> head_big(8)
 
 head_big <- function(.df, n = 6){
 
