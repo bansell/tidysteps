@@ -10,7 +10,7 @@
 #' mtc_mat <- as.matrix(mtcars)
 #' mtc_mat |> bighead(8)
 
-bighead <- function(.df, n = 6){
+head_big <- function(.df, n = 6){
 
   dplyr::as_tibble(.df[1:n, 1:n]) }
 
