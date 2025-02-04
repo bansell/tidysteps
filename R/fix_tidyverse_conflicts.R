@@ -1,41 +1,19 @@
-
 #' @title Fix tidyverse conflicts
 #' @description Find functions with name conflicts in the global environment and reassign all, prioritizing tidyverse functions.
 #'
 #' @importFrom tidyverse tidyverse_conflicts
+#' @importFrom conflicted conflicts_prefer
 #' @export
 fix_tidyverse_conflicts <- function() {
-  requireNamespace("tidyverse")
 
-  confl <- tidyverse::tidyverse_conflicts()
+  if (!requireNamespace("conflicted", quietly = TRUE)) {
+    stop("Package 'conflicted' is required but not installed.")
+  }
 
-  confl_tbl <- purrr::map2_df(confl,
-                              names(confl),
-                              ~ dplyr::tibble(fun = .y, masker = .x[1], maskee = list(.x[-1]))) %>%
-    dplyr::mutate(fun = dplyr::if_else(stringr::str_detect(fun, '^%.+%$'),
-                                       stringr::str_c('`', fun, '`'),
-                                       fun))
-
-  {
-    if(nrow(confl_tbl) > 0) {
-
-      #for testing:
-      # confl_tbl$maskee[1] <- 'package:dplyr'
-
-      confl_tbl_tidyv <-  tidyr::unnest(confl_tbl, maskee) %>%
-        dplyr::mutate_at(dplyr::vars(masker, maskee), ~ stringr::str_remove(., 'package:')) %>%
-        dplyr::filter(maskee %in% tidyverse::tidyverse_packages())
-
-      {
-        if(nrow(confl_tbl_tidyv) > 0) {
-          to_assign <- with(confl_tbl_tidyv, stringr::str_c(fun, ' <- ', maskee, '::', fun))
-
-          purrr::walk(to_assign, ~ {
-            eval(parse(text = .), envir = .GlobalEnv)
-            message(.)
-          })
-        }
-        }
-    }
-    }
+  tidyverse::tidyverse_conflicts() |>
+    purrr::map_chr(dplyr::last) |>
+    tibble::enframe() |>
+    with(stringr::str_c(stringr::str_remove(value, '^package:'), '::', name)) |>
+    purrr::map(rlang::parse_expr) |>
+    (\(x) do.call(conflicted::conflicts_prefer, x))()
 }
